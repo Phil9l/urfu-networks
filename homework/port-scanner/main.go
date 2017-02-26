@@ -90,16 +90,16 @@ func handleAvailableTCPPorts(hostname string, port int, ch chan string) {
 func checkProtocol(address string, resultChannel chan struct {address, status string}) {
     protocolChannel := make(chan string, 100)
     wg := &sync.WaitGroup{}
-    wg.Add(1)
+    wg.Add(2)
 
     go checkSSHprotocol(address, protocolChannel, wg)
+    go checkHTTPprotocol(address, protocolChannel, wg)
 
     wg.Wait()
     
     protocol := "Unknown"
     select {
         case x, ok := <-protocolChannel:
-            log.Println(address)
             if ok {
                 protocol = x
             }
@@ -110,12 +110,27 @@ func checkProtocol(address string, resultChannel chan struct {address, status st
 
 func checkSSHprotocol(address string, responseChannel chan string, wg *sync.WaitGroup) {
     connection, err := net.Dial("tcp", address)
-    connection.SetReadDeadline(time.Now().Add(1000 * time.Millisecond))
+    connection.SetReadDeadline(time.Now().Add(800 * time.Millisecond))
     bufReader := bufio.NewReader(connection)
     result, err := bufReader.ReadBytes('\n')
 
     if err == nil && strings.HasPrefix(string(result), "SSH") {
         responseChannel <- "SSH"
+    }
+
+    wg.Done()
+}
+
+func checkHTTPprotocol(address string, responseChannel chan string, wg *sync.WaitGroup) {
+    connection, err := net.Dial("tcp", address)
+    connection.SetReadDeadline(time.Now().Add(700 * time.Millisecond))
+    connection.Write([]byte("GET / HTTP/1.1\n\n"))
+    bufReader := bufio.NewReader(connection)
+    result, err := bufReader.ReadBytes('\n')
+
+    if err == nil && strings.HasPrefix(string(result), "HTTP") {
+        // log.Println(address, " — HTTP")
+        responseChannel <- "HTTP"
     }
 
     wg.Done()
