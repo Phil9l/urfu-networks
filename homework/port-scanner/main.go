@@ -2,23 +2,30 @@ package main
 
 import (
     "fmt"
-    "log"
+    // "log"
     "net"
     "strings"
     "sync"
     "time"
-    "os"
     "bufio"
+    "flag"
 )
 
 const MIN_PORT = 0
 const MAX_PORT = 65535
 
 func main() {
-    if len(os.Args) != 2 {
-        log.Fatal("Required 1 argument: IP to scan")
+	flag.Usage = func() {
+		fmt.Printf("Usage:\n./main [options] ip\nOptions:\n")
+		flag.PrintDefaults()
+	}
+    flag.Parse()
+
+    if flag.NArg() != 1 {
+        flag.Usage()
+		return
     }
-    hostnameToScan := os.Args[1]
+    hostnameToScan := flag.Args()[0]
 
     portChannel := make(chan int, 100)
     addressChannel := make(chan string, 100)
@@ -137,17 +144,17 @@ func checkHTTPprotocol(address string, responseChannel chan string, wg *sync.Wai
 }
 
 func checkSMTPprotocol(address string, responseChannel chan string, wg *sync.WaitGroup) {
-    log.Println(address)
+    // log.Println(address)
     connection, err := net.Dial("tcp", address)
     connection.SetReadDeadline(time.Now().Add(500 * time.Millisecond))
     bufReader := bufio.NewReader(connection)
 
-    tres, _ := bufReader.ReadBytes('\n')
-    log.Println(tres)
+    _, _ = bufReader.ReadBytes('\n')
+    // log.Println(tres)
     connection.Write([]byte("HELO"))
     result, err := bufReader.ReadBytes('\n')
     
-    log.Println(result)
+    // log.Println(result)
 
     if err == nil && strings.HasPrefix(string(result), "501") {
         responseChannel <- "SMTP"
