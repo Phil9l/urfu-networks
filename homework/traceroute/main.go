@@ -68,7 +68,7 @@ func tracerouteWithGivenTTL(address *syscall.SockaddrInet4, ttl int) (string, er
     defer syscall.Close(readSock)
     defer syscall.Close(writeSock)
     
-    tv := syscall.NsecToTimeval(1e6 * 5000)
+    tv := syscall.NsecToTimeval(1e6 * 8000)
     err = syscall.SetsockoptTimeval(readSock, syscall.SOL_SOCKET, syscall.SO_RCVTIMEO, &tv)
     if err != nil {
 		return "", err
