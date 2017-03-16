@@ -1,0 +1,405 @@
+urgu.org.		36000 IN SOA ns.urgu.org. uzer.hackerdom.ru. (
+				2017030600 ; serial
+				172800     ; refresh (2 days)
+				900        ; retry (15 minutes)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+urgu.org.		36000 IN NS ns.urgu.org.
+urgu.org.		36000 IN NS ns.usaaa.ru.
+urgu.org.		36000 IN A 212.193.68.254
+urgu.org.		3600 IN	MX 1 ASPMX.L.GOOGLE.COM.
+urgu.org.		3600 IN	MX 5 ALT1.ASPMX.L.GOOGLE.COM.
+urgu.org.		3600 IN	MX 5 ALT2.ASPMX.L.GOOGLE.COM.
+urgu.org.		3600 IN	MX 10 ASPMX2.GOOGLEMAIL.COM.
+urgu.org.		3600 IN	MX 10 ASPMX3.GOOGLEMAIL.COM.
+urgu.org.		3600 IN	SPF "v=spf1 a include:_spf.google.com ~all"
+urgu.org.		3600 IN	TXT "v=spf1 a include:_spf.google.com ~all"
+621-switch.urgu.org.	3600 IN	A 10.96.18.1
+621-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+621-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+621-test.urgu.org.	3600 IN	A 172.16.10.217
+621-test.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+621-test.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+630-switch.urgu.org.	3600 IN	A 10.96.18.6
+630-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+630-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+631-far-high-ups.urgu.org. 3600	IN A 10.96.18.25
+631-far-high-ups.urgu.org. 3600	IN SPF "v=spf1 ip4:212.193.68.254 ~all"
+631-far-high-ups.urgu.org. 3600	IN TXT "v=spf1 ip4:212.193.68.254 ~all"
+631-far-low-ups.urgu.org. 3600 IN A 10.96.18.24
+631-far-low-ups.urgu.org. 3600 IN SPF "v=spf1 ip4:212.193.68.254 ~all"
+631-far-low-ups.urgu.org. 3600 IN TXT "v=spf1 ip4:212.193.68.254 ~all"
+631-near-low-ups.urgu.org. 3600	IN A 10.96.18.23
+631-near-low-ups.urgu.org. 3600	IN SPF "v=spf1 ip4:212.193.68.254 ~all"
+631-near-low-ups.urgu.org. 3600	IN TXT "v=spf1 ip4:212.193.68.254 ~all"
+633-printer.urgu.org.	3600 IN	A 172.16.10.246
+633-printer.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+633-printer.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+633-scanner.urgu.org.	3600 IN	A 172.16.10.244
+633-scanner.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+633-scanner.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+6t.urgu.org.		3600 IN	CNAME 621-test.urgu.org.
+google._domainkey.urgu.org. 3600 IN TXT	"v=DKIM1\; k=rsa\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZtTOyBGwX+iDBxZVWx1tMJHsQFGLJHZTncSQec5PbrtnVRHmih0uLFT6gMKJLOktZsCPmlnd7ingGSPRSvRSEqLu92h55npBx68yGhTcXVcqCuaubdxSJDDCGyuiUmANSiv0jDUhiT7B44DCC0dxXipP4qsPy40fAYkMG6BJuTQIDAQAB"
+airlab-switch.urgu.org.	3600 IN	A 10.96.18.9
+airlab-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+airlab-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+anytask.urgu.org.	3600 IN	CNAME dijkstra.urgu.org.
+ci.anytask.urgu.org.	3600 IN	CNAME anytask.urgu.org.
+anytask-back.urgu.org.	3600 IN	A 172.16.10.241
+anytask-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+anytask-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ap1.urgu.org.		3600 IN	A 10.96.18.22
+ap1.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ap1.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+as.urgu.org.		3600 IN	CNAME airlab-switch.urgu.org.
+asus1.urgu.org.		3600 IN	A 172.16.10.220
+asus1.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+asus1.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+asus2.urgu.org.		3600 IN	A 172.16.10.224
+asus2.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+asus2.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+asus3.urgu.org.		3600 IN	A 172.16.10.227
+asus3.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+asus3.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+bfu.urgu.org.		3600 IN	CNAME 631-near-low-ups.urgu.org.
+bs.urgu.org.		3600 IN	CNAME 630-switch.urgu.org.
+canion.urgu.org.	3600 IN	A 172.16.10.226
+canion.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+canion.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh1.urgu.org.		3600 IN	A 172.16.10.201
+clh1.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh1.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh10.urgu.org.		3600 IN	A 172.16.10.210
+clh10.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh10.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh11.urgu.org.		3600 IN	A 172.16.10.211
+clh11.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh11.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh12.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh12.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh12.urgu.org.		3600 IN	A 172.16.10.216
+clh2.urgu.org.		3600 IN	A 172.16.10.202
+clh2.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh2.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh3.urgu.org.		3600 IN	A 172.16.10.203
+clh3.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh3.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh4.urgu.org.		3600 IN	A 172.16.10.204
+clh4.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh4.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh5.urgu.org.		3600 IN	A 172.16.10.205
+clh5.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh5.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh6.urgu.org.		3600 IN	A 172.16.10.206
+clh6.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh6.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh7.urgu.org.		3600 IN	A 172.16.10.207
+clh7.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh7.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh8.urgu.org.		3600 IN	A 172.16.10.208
+clh8.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh8.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+clh9.urgu.org.		3600 IN	A 172.16.10.209
+clh9.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+clh9.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+d.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+dijkstra.urgu.org.	3600 IN	A 212.193.68.254
+dijkstra.urgu.org.	3600 IN	SPF "v=spf1 a ~all"
+dijkstra.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+dijkstra.urgu.org.	3600 IN	TXT "v=spf1 a ~all"
+dijkstra.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+dijkstra.urgu.org.	3600 IN	MX 10 urgu.org.
+x._domainkey.dijkstra.urgu.org.	3600 IN	TXT "v=DKIM1\; k=rsa\; p=MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhANAF7WyY2zwE7fkW4VNzIZwlGwQBuY8i3PKAub56doiCtweVHR29TS7TjWSvPurT7aWeFGUuGKIPPw4AqZ3PL+9aV1tN2C5fGCca0STbHFo4qyWWQHS8H+6tAt8x/xrO8QIDAQAB"
+y._domainkey.dijkstra.urgu.org.	3600 IN	TXT "v=DKIM1\; k=rsa\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0DhU+L4YD3Om4l6rIu4NTHtO+fjGo+h3wOAqsKB/rqS+x4XNNi6hpCko1x74Z+RIxDHGEM3XRcQVwUJvfA612WkLRCTM4NI7xAY3xTI9dwg9OjLz6uSR0nHeiiYZtIQppMKOPY2m86nsl+DDMG74SOt2UCbtmTRAkUqvQ7zN78QIDAQAB"
+*.e.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+estatus.urgu.org.	3600 IN	CNAME pioneer.urgu.org.
+fb.urgu.org.		36000 IN NS ns.urgu.org.
+h.urgu.org.		3600 IN	A 10.96.18.5
+h.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h-i.urgu.org.		3600 IN	CNAME hamming-ipmi.urgu.org.
+h01.urgu.org.		3600 IN	A 10.96.18.65
+h01.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h01.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h02.urgu.org.		3600 IN	A 10.96.18.66
+h02.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h02.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h03.urgu.org.		3600 IN	A 10.96.18.67
+h03.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h03.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h04.urgu.org.		3600 IN	A 10.96.18.68
+h04.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h04.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h06.urgu.org.		3600 IN	A 10.96.18.70
+h06.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h06.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h07.urgu.org.		3600 IN	A 10.96.18.71
+h07.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h07.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h08.urgu.org.		3600 IN	A 10.96.18.72
+h08.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h08.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h09.urgu.org.		3600 IN	A 10.96.18.73
+h09.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h09.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h10.urgu.org.		3600 IN	A 10.96.18.74
+h10.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h10.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h11.urgu.org.		3600 IN	A 10.96.18.75
+h11.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h11.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h12.urgu.org.		3600 IN	A 10.96.18.76
+h12.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h12.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h13.urgu.org.		3600 IN	A 10.96.18.77
+h13.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h13.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h14.urgu.org.		3600 IN	A 10.96.18.78
+h14.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h14.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h15.urgu.org.		3600 IN	A 10.96.18.79
+h15.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h15.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h16.urgu.org.		3600 IN	A 10.96.18.80
+h16.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h16.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h17.urgu.org.		3600 IN	A 10.96.18.81
+h17.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h17.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h18.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h18.urgu.org.		3600 IN	A 10.96.18.82
+h18.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h19.urgu.org.		3600 IN	A 10.96.18.83
+h19.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h19.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h20.urgu.org.		3600 IN	A 10.96.18.84
+h20.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h20.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h21.urgu.org.		3600 IN	A 10.96.18.85
+h21.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h21.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h22.urgu.org.		3600 IN	A 10.96.18.86
+h22.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h22.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h23.urgu.org.		3600 IN	A 10.96.18.87
+h23.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h23.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h24.urgu.org.		3600 IN	A 10.96.18.88
+h24.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h24.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h25.urgu.org.		3600 IN	A 10.96.18.89
+h25.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h25.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h26.urgu.org.		3600 IN	A 10.96.18.90
+h26.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h26.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h27.urgu.org.		3600 IN	A 10.96.18.91
+h27.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h27.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+h28.urgu.org.		3600 IN	A 10.96.18.92
+h28.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+h28.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hackerdom-back.urgu.org. 3600 IN A 172.16.10.245
+hackerdom-back.urgu.org. 3600 IN SPF "v=spf1 ip4:212.193.68.254 ~all"
+hackerdom-back.urgu.org. 3600 IN TXT "v=spf1 ip4:212.193.68.254 ~all"
+hamming.urgu.org.	3600 IN	A 212.193.68.251
+hamming.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hamming.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+images.hamming.urgu.org. 3600 IN CNAME hamming.urgu.org.
+hamming-ipmi.urgu.org.	3600 IN	A 10.96.18.19
+hamming-ipmi.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hamming-ipmi.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hap.urgu.org.		3600 IN	CNAME hog-ap.urgu.org.
+hdfs.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+hewlett.urgu.org.	3600 IN	A 172.16.10.232
+hewlett.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hewlett.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hlu.urgu.org.		3600 IN	CNAME hog-low-ups.urgu.org.
+hog-ap.urgu.org.	3600 IN	A 10.96.18.26
+hog-ap.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hog-ap.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hog-low-ups.urgu.org.	3600 IN	A 10.96.18.11
+hog-low-ups.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hog-low-ups.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hog-switch.urgu.org.	3600 IN	A 10.96.18.8
+hog-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hog-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hog-test.urgu.org.	3600 IN	A 172.16.10.215
+hog-test.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hog-test.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hog-test-amt.urgu.org.	3600 IN	A 172.16.20.6
+hog-test-amt.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hog-test-amt.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hp-switch.urgu.org.	3600 IN	A 10.96.18.7
+hp-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+hp-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+hps.urgu.org.		3600 IN	CNAME hp-switch.urgu.org.
+hpu.urgu.org.		3600 IN	CNAME 631-far-low-ups.urgu.org.
+hpu2.urgu.org.		3600 IN	CNAME 631-far-high-ups.urgu.org.
+hs.urgu.org.		3600 IN	CNAME hog-switch.urgu.org.
+ht.urgu.org.		3600 IN	CNAME hog-test.urgu.org.
+image32.urgu.org.	3600 IN	A 172.16.10.214
+image32.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+image32.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+image32-test.urgu.org.	3600 IN	A 172.16.10.213
+image32-test.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+image32-test.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+image64.urgu.org.	3600 IN	A 172.16.10.252
+image64.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+image64.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+image64-test.urgu.org.	3600 IN	A 172.16.10.251
+image64-test.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+image64-test.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+irc-back.urgu.org.	3600 IN	A 172.16.10.222
+irc-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+irc-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+it.urgu.org.		3600 IN	CNAME itanium.urgu.org.
+it-m.urgu.org.		3600 IN	CNAME it-mplan.urgu.org.
+it-mplan.urgu.org.	3600 IN	A 10.96.18.15
+it-mplan.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+it-mplan.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+it2.urgu.org.		3600 IN	CNAME itanium2.urgu.org.
+it2-m.urgu.org.		3600 IN	CNAME it2-mplan.urgu.org.
+it2-mplan.urgu.org.	3600 IN	A 10.96.18.14
+it2-mplan.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+it2-mplan.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+itanium.urgu.org.	3600 IN	A 172.16.10.238
+itanium.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+itanium.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+itanium2.urgu.org.	3600 IN	A 172.16.10.239
+itanium2.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+itanium2.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+kvkt-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+kvkt-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+kvkt-back.urgu.org.	3600 IN	A 172.16.10.247
+l.urgu.org.		3600 IN	A 10.96.18.10
+l.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+l.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+m.urgu.org.		3600 IN	A 10.96.18.3
+m.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+m.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+m-i.urgu.org.		3600 IN	CNAME markov-ipmi.urgu.org.
+mail.urgu.org.		3600 IN	CNAME ghs.google.com.
+main-switch.urgu.org.	3600 IN	A 212.193.68.225
+main-switch.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+main-switch.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+mapred.urgu.org.	3600 IN	CNAME dijkstra.urgu.org.
+markov.urgu.org.	3600 IN	A 212.193.68.252
+markov.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+markov.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+markov-ipmi.urgu.org.	3600 IN	A 10.96.18.18
+markov-ipmi.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+markov-ipmi.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+mirror.urgu.org.	3600 IN	CNAME mirror.yandex.ru.
+mirrors.urgu.org.	3600 IN	CNAME mirror.yandex.ru.
+mm.urgu.org.		3600 IN	CNAME mmarkov.urgu.org.
+mmarkov.urgu.org.	3600 IN	A 10.96.18.4
+mmarkov.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+mmarkov.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ms.urgu.org.		3600 IN	CNAME main-switch.urgu.org.
+mysql.urgu.org.		3600 IN	A 172.16.10.243
+mysql.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+mysql.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+n.urgu.org.		3600 IN	CNAME neumann.urgu.org.
+neumann.urgu.org.	3600 IN	A 10.96.18.12
+neumann.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+neumann.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ns.urgu.org.		36000 IN A 212.193.68.254
+p.urgu.org.		3600 IN	CNAME postel.urgu.org.
+p-m.urgu.org.		3600 IN	CNAME postel-mplan.urgu.org.
+packard.urgu.org.	3600 IN	A 172.16.10.233
+packard.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+packard.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+pioneer.urgu.org.	3600 IN	A 188.226.127.228
+pioneer.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+pioneer.urgu.org.	3600 IN	SPF "v=spf1 a ip6:2a02:17d0:250:d11b::1"
+pioneer.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+pioneer.urgu.org.	3600 IN	TXT "v=spf1 a ip6:2a02:17d0:250:d11b::1"
+pioneer.urgu.org.	3600 IN	AAAA 2a02:17d0:250:d11b::1
+postel.urgu.org.	3600 IN	A 212.193.68.253
+postel.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+postel.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+postel-mplan.urgu.org.	3600 IN	A 10.96.18.16
+postel-mplan.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+postel-mplan.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+puppet.urgu.org.	3600 IN	CNAME dijkstra.urgu.org.
+r.urgu.org.		3600 IN	CNAME ritchie.urgu.org.
+r-i.urgu.org.		3600 IN	CNAME ritchie-ipmi.urgu.org.
+redmine-back.urgu.org.	3600 IN	A 172.16.10.235
+redmine-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+redmine-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ritchie.urgu.org.	3600 IN	A 10.96.18.2
+ritchie.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ritchie.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ritchie-ipmi.urgu.org.	3600 IN	A 10.96.18.17
+ritchie-ipmi.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ritchie-ipmi.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ructf-back.urgu.org.	3600 IN	A 172.16.10.250
+ructf-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ructf-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ructf-olymp.urgu.org.	3600 IN	A 212.193.68.228
+ructf-olymp.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ructf-olymp.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ructf-test.urgu.org.	3600 IN	A 172.16.16.1
+ructf-test.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ructf-test.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+runc.urgu.org.		36000 IN NS dijkstra.urgu.org.
+s-m.urgu.org.		3600 IN	CNAME storage-mplan.urgu.org.
+s6.urgu.org.		3600 IN	CNAME 621-switch.urgu.org.
+school-back.urgu.org.	3600 IN	A 172.16.10.240
+school-back.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+school-back.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+ssl.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+status.urgu.org.	3600 IN	CNAME dijkstra.urgu.org.
+stor1.urgu.org.		3600 IN	CNAME hamming.urgu.org.
+stor2.urgu.org.		3600 IN	CNAME markov.urgu.org.
+storage-mplan.urgu.org.	3600 IN	A 10.96.18.13
+storage-mplan.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+storage-mplan.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+t.urgu.org.		3600 IN	CNAME tesla.urgu.org.
+t-i.urgu.org.		3600 IN	CNAME tesla-ipmi.urgu.org.
+tesla.urgu.org.		3600 IN	A 10.96.18.21
+tesla.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+tesla.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+tesla-ipmi.urgu.org.	3600 IN	A 10.96.18.20
+tesla-ipmi.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+tesla-ipmi.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+tracker.urgu.org.	3600 IN	CNAME dijkstra.urgu.org.
+ts.urgu.org.		3600 IN	A 212.193.68.250
+ts.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+ts.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns1.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns1.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns1.urgu.org.	3600 IN	A 10.96.240.10
+urfu-dns2.urgu.org.	3600 IN	A 10.98.241.10
+urfu-dns2.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns2.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns3.urgu.org.	3600 IN	A 10.106.240.10
+urfu-dns3.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+urfu-dns3.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+uzer-pc-amt.urgu.org.	3600 IN	A 10.96.18.94
+uzer-pc-amt.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+uzer-pc-amt.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+uzer-work.urgu.org.	3600 IN	A 37.140.186.98
+uzer-work.urgu.org.	3600 IN	SPF "v=spf1 ip4:37.140.186.0/24 ip6:2a02:6b8::/32 -all"
+uzer-work.urgu.org.	3600 IN	TXT "v=spf1 ip4:37.140.186.0/24 ip6:2a02:6b8::/32 -all"
+v.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+w7.urgu.org.		3600 IN	CNAME windows7.urgu.org.
+wiki.urgu.org.		3600 IN	CNAME dijkstra.urgu.org.
+windows7.urgu.org.	3600 IN	A 172.16.10.212
+windows7.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+windows7.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+xp.urgu.org.		3600 IN	A 172.16.10.218
+xp.urgu.org.		3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+xp.urgu.org.		3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+znick-vm.urgu.org.	3600 IN	A 172.16.10.249
+znick-vm.urgu.org.	3600 IN	SPF "v=spf1 ip4:212.193.68.254 ~all"
+znick-vm.urgu.org.	3600 IN	TXT "v=spf1 ip4:212.193.68.254 ~all"
+urgu.org.		36000 IN SOA ns.urgu.org. uzer.hackerdom.ru. (
+				2017030600 ; serial
+				172800     ; refresh (2 days)
+				900        ; retry (15 minutes)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
