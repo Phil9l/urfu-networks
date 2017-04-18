@@ -17,15 +17,6 @@ const (
     WRITE_TIMEOUT = 2000
 )
 
-/*
-func main() {
-    netName, origin, country, err := whois("109.195.105.181")
-    // log.Println(err)
-    if err == nil {
-        log.Printf("%s %s [⚑ %s]\n", netName, origin, country)
-    }
-}
-*/
 
 func whois(hostname string) (string, string, string, error) {
     server, err := getWhoisServer(hostname)
@@ -42,7 +33,7 @@ func whois(hostname string) (string, string, string, error) {
     connection.SetWriteDeadline(time.Now().Add(WRITE_TIMEOUT * time.Millisecond))
     connection.Write([]byte(hostname + "\n"))
     bufReader := bufio.NewReader(connection)
-    
+
     netName, origin, country := "", "", ""
 
     for true {
@@ -65,6 +56,17 @@ func whois(hostname string) (string, string, string, error) {
     }
     // log.Println(netName, origin, country)
     return netName, origin, country, nil
+}
+
+func isLocal(ip string) bool {
+    return isIPInNetwork(ip, "10.0.0.0/8") || isIPInNetwork(ip, "172.16.0.0/12") || isIPInNetwork(ip, "192.168.0.0/16")
+}
+
+func isIPInNetwork(ip string, network string) bool {
+    parsedIP, _, _ := net.ParseCIDR(ip + "/32")
+    _, parsedNetwork, _ := net.ParseCIDR(network)
+
+    return parsedNetwork.Contains(parsedIP)
 }
 
 func getWhoisServer(hostname string) (string, error) {
@@ -90,5 +92,5 @@ func getWhoisServer(hostname string) (string, error) {
         }
     }
 
-    return "", errors.New("No refer field.")    
+    return "", errors.New("No refer field.")
 }

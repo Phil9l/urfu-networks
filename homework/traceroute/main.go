@@ -6,12 +6,13 @@ import (
     "syscall"
     "flag"
     "log"
+    "errors"
 )
 
 const (
-    HOST = "0.0.0.0"
-    RECV_PORT = 0
-    MAX_TTL = 32
+    RECV_PORT = 33434
+    MAX_TTL = 30
+    TIMEOUT = 500
 )
 
 
@@ -34,26 +35,53 @@ func main() {
 }
 
 func traceroute(address string) {
-    log.Printf("Starting")
     for ttl := 1; ttl <= MAX_TTL; ttl++ {
-        resIP, err := tracerouteWithGivenTTL(getIPv4Address(address, 35353), ttl)
-        // log.Printf(resIP)
-        if err != nil {
-            fmt.Printf("%d\t* * *\n", ttl)
+        resIP, err := tracerouteWithGivenTTL(getIPv4Address(address, RECV_PORT), ttl)
+        if err != nil && err.Error() != "Done" {
+            if err.Error() == "operation not permitted" {
+                fmt.Println("Operation not permitted, please run as admin")
+                return
+            }
+            fmt.Printf("%d. *\r\n\r\n", ttl)
         } else {
+            fmt.Printf("%d. %s\r\n", ttl, resIP)
+            if isLocal(resIP) {
+                fmt.Printf("local\r\n\r\n")
+                continue
+            }
+            prevErr := err
             netName, origin, country, err := whois(resIP)
             if err == nil {
-                fmt.Printf("%d\t%s\t[%s\t%s\t%s]\n", ttl, resIP, netName, origin, country)
-                // fmt.Printf("%s %s [⚑ %s]\n", netName, origin, country)
+                fmt.Printf("%s %s %s\r\n\r\n", netName, origin, country)
             } else {
-                fmt.Printf("%d\t%s\n", ttl, resIP)
+                fmt.Printf("\r\n")
+            }
+            if prevErr != nil {
+                return
             }
         }
     }
 }
 
+func socketAddr() (addr [4]byte, err error) {
+    addrs, err := net.InterfaceAddrs()
+    if err != nil {
+        return
+    }
+    for _, a := range addrs {
+        if ipnet, ok := a.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+            if len(ipnet.IP.To4()) == net.IPv4len {
+                copy(addr[:], ipnet.IP.To4())
+                return
+            }
+        }
+    }
+    err = errors.New("You do not appear to be connected to the Internet")
+    return
+}
+
+
 func tracerouteWithGivenTTL(address *syscall.SockaddrInet4, ttl int) (string, error) {
-    // log.Printf("Tracerouting %s", address)
     writeSock, err := syscall.Socket(syscall.AF_INET, syscall.SOCK_DGRAM, syscall.IPPROTO_UDP)
 
     if err != nil {
@@ -65,27 +93,29 @@ func tracerouteWithGivenTTL(address *syscall.SockaddrInet4, ttl int) (string, er
         return "", err
     }
 
-    defer syscall.Close(readSock)
-    defer syscall.Close(writeSock)
-    
-    tv := syscall.NsecToTimeval(1e6 * 8000)
+    tv := syscall.NsecToTimeval(1e6 * TIMEOUT)
     err = syscall.SetsockoptTimeval(readSock, syscall.SOL_SOCKET, syscall.SO_RCVTIMEO, &tv)
     if err != nil {
 		return "", err
 	}
 
-    err = syscall.SetsockoptInt(writeSock, syscall.SOL_IP, syscall.IP_TTL, ttl)
+    err = syscall.SetsockoptInt(writeSock, 0, syscall.IP_TTL, ttl)
     if err != nil {
         return "", err
     }
-    
-    err = syscall.Bind(readSock, getIPv4Address(HOST, RECV_PORT))
+
+    defer syscall.Close(readSock)
+    defer syscall.Close(writeSock)
+
+    sockAddr, err := socketAddr()
     if err != nil {
         return "", err
     }
-    
-    icmp_data := []byte{8, 0, 247, 255, 0, 0, 0, 0}    
-    err = syscall.Sendto(writeSock, icmp_data, 0, address)
+    err = syscall.Bind(readSock, getIPv4AddressFromBytes(sockAddr, RECV_PORT))
+    if err != nil {
+        return "", err
+    }
+    err = syscall.Sendto(writeSock, []byte{0x0}, 0, address)
     if err != nil {
         return "", err
     }
@@ -95,20 +125,32 @@ func tracerouteWithGivenTTL(address *syscall.SockaddrInet4, ttl int) (string, er
 	if err != nil {
 		return "", err
 	}
-    
-    // err_type, err_code := int(buf[20]), int(buf[21])
-    
-    tmp := from.(*syscall.SockaddrInet4).Addr
-    // log.Printf("Error: [%d, %d]\n", err_type, err_code)
-    // log.Printf("%d\t%d.%d.%d.%d\n", ttl, tmp[0], tmp[1], tmp[2], tmp[3])
-    
-    return fmt.Sprintf("%d.%d.%d.%d", tmp[0], tmp[1], tmp[2], tmp[3]), nil
+
+    // tmp := from.(*syscall.SockaddrInet4).Addr
+
+    // result := fmt.Sprintf("%d.%d.%d.%d", tmp[0], tmp[1], tmp[2], tmp[3])
+    result := getIPString(from)
+    if result ==  getIPString(address) {
+        return result, errors.New("Done")
+    }
+
+    return result, nil
+}
+
+func getIPString(addr syscall.Sockaddr) string {
+    tmp := addr.(*syscall.SockaddrInet4).Addr
+    return fmt.Sprintf("%d.%d.%d.%d", tmp[0], tmp[1], tmp[2], tmp[3])
+
 }
 
 func getIPv4Address(hostname string, port int) *syscall.SockaddrInet4 {
     ipArray := net.ParseIP(hostname).To4()
+    return getIPv4AddressFromBytes([4]byte{ipArray[0], ipArray[1], ipArray[2], ipArray[3]}, port)
+}
+
+func getIPv4AddressFromBytes(hostname[4] byte, port int) *syscall.SockaddrInet4 {
     return &syscall.SockaddrInet4 {
         Port: port,
-        Addr: [4]byte{ipArray[0], ipArray[1], ipArray[2], ipArray[3]},
+        Addr: hostname,
     }
 }
