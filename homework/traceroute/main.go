@@ -1,12 +1,11 @@
 package main
 
 import (
+    "errors"
+    "flag"
     "fmt"
     "net"
     "syscall"
-    "flag"
-    "log"
-    "errors"
 )
 
 const (
@@ -29,7 +28,8 @@ func main() {
 
     address, err := net.LookupHost(flag.Args()[0])
     if err != nil {
-        log.Println("Bad hostname")
+        fmt.Printf("%s is invalid\n", flag.Args()[0])
+		return
     }
     traceroute(address[0])
 }
